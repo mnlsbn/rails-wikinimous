@@ -1,0 +1,11 @@
+<h2><%= @article.title %></h2>
+<p><%= raw @html %></p>           <%# rajouter raw avant la variable pour ne pas afficher les balises%>
+<p><%= @article.created_at %></p>
+
+<%= link_to "Delete", article_path(@article),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+<%= link_to "Edit", edit_article_path(@article) %> <%# attention à utiliser le prefix des routes %>
+
+<%= link_to "Index", "/articles" %>
